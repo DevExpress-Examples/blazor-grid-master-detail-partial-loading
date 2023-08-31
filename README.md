@@ -12,7 +12,7 @@ Do the following to organize such master-detail relationship:
 
 1. Add a master grid to your application, specify the grid's data source and columns. In this example, the **Index.razor** file implements the master grid.
 2. Add a [DetailRowTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.DetailRowTemplate) to the grid's markup to create a detail view.
-3. Create a separate component that implements a detail view (**DetailContent.razor**). The **GetItemsByDateAsync** method imitates a time-consuming operation that retrieves data.
+3. Create a separate component that implements a detail view (**DetailContent.razor**). This view may contain any custom content. In this example, another grid displays detail information and the **GetItemsByDateAsync** method imitates a time-consuming operation that retrieves data.
 4. Place a Loading Panel to the detail view markup. The following snippet displays the Loading Panel until data is loaded:
     ```Razor
     @if(Records == null) {
