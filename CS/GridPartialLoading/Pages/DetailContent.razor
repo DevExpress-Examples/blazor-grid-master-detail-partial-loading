@@ -1,6 +1,6 @@
-﻿@if(Records == null) {
-    <DxLoadingPanel Visible="true" />
-} else {
+﻿<DxLoadingPanel Visible=@(Records == null) />
+
+@if(Records != null) {
     <DxGrid Data="@Records">
         <Columns>
             <DxGridDataColumn FieldName="Time" DisplayFormat="f" />

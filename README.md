@@ -14,13 +14,11 @@ Do the following to organize such master-detail relationship:
 2. Add a [DetailRowTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.DetailRowTemplate) to the grid's markup to create a detail view.
 3. Create a separate component that implements a detail view (**DetailContent.razor**). This view may contain any custom content. In this example, another grid displays detail information and the **GetItemsByDateAsync** method imitates a time-consuming operation that retrieves data.
 4. Place a Loading Panel to the detail view markup. The following snippet displays the Loading Panel until data is loaded:
+
     ```Razor
-    @if(Records == null) {
-        <DxLoadingPanel Visible="true" />
-    } else {
-        @* Detail view implementation
-    }
+    <DxLoadingPanel Visible=@(Records == null) />
     ```
+    
 5. Add the detail view to the **DetailRowTemplate**. Bind this view to a detail data source that uses the template's context object as a filter criteria.
 
 ## Files to Review
