@@ -1,3 +1,7 @@
+<!-- default badges list -->
+[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1187305)
+[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+<!-- default badges end -->
 # Grid for Blazor - Master-Detail with partial loading
 
 The DevExpress Blazor Grid component allows you to create hierarchical layouts of any complexity and depth. This example uses a nested component to visualize master-detail relationship between two data tables. It also shows how to integrate a Loading Panel into a detail area if it takes time for a nested component to render and load data, for example, if it retrieves records from a database.
