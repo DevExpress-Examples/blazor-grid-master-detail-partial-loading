@@ -1,0 +1,33 @@
+﻿@page "/"
+
+@using GridPartialLoading.Data
+@inject WeatherForecastService ForecastService
+
+<h2>DevExpress Grid</h2>
+
+@if(forecasts == null) {
+    <p><em>Loading...</em></p>
+} else {
+    <DxGrid Data="@forecasts" 
+            AllowSelectRowByClick="true"
+            SelectionMode="GridSelectionMode.Single">
+        <Columns>
+            <DxGridDataColumn FieldName="Date" />
+            <DxGridDataColumn FieldName="Summary" />
+        </Columns>
+        <DetailRowTemplate Context="LineItem">
+            @{
+                var date = ((WeatherForecast)LineItem.DataItem).Date;
+            }
+            <DetailContent Date="date" />
+        </DetailRowTemplate>
+    </DxGrid>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync() {
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Today);
+    }
+}

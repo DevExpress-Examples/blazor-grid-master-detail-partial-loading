@@ -1,0 +1,40 @@
+﻿@if(Records == null) {
+    <DxLoadingPanel Visible="true" />
+} else {
+    <DxGrid Data="@Records">
+        <Columns>
+            <DxGridDataColumn FieldName="Time" DisplayFormat="f" />
+            <DxGridDataColumn FieldName="TemperatureC" Caption="Temperature" />
+        </Columns>
+    </DxGrid>
+}
+
+@code {
+    IEnumerable<DayRecord>? Records;
+
+    [Parameter]
+    public DateTime Date { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        Records = await GetItemsByDateAsync(Date);
+    }
+
+    public class DayRecord {
+        public DateTime? Time { get; set; }
+        public int? TemperatureC { get; set; }
+    }
+
+    protected IEnumerable<DayRecord> GetItemsByDate(DateTime date) {
+        var rng = new Random();
+        return new[] { 
+            new DayRecord { Time = date.AddHours(7), TemperatureC = rng.Next(15, 30) }, 
+            new DayRecord { Time = date.AddHours(14), TemperatureC = rng.Next(15, 30) },
+            new DayRecord { Time = date.AddHours(21), TemperatureC = rng.Next(15, 30) }
+        };
+    }
+
+    protected async Task<IEnumerable<DayRecord>> GetItemsByDateAsync(DateTime date) {
+        await Task.Delay(1000);
+        return GetItemsByDate(date);
+    }
+}
