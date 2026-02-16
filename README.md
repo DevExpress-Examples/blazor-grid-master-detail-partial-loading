@@ -40,7 +40,7 @@ Follow the steps below to set up a master-detail relationship:
 - [Grid for Blazor - How to add a nested Grid to create a master-detail layout](https://github.com/DevExpress-Examples/blazor-dxgrid-master-detail-grid)
 - [Grid for Blazor - Save and load layout information](https://github.com/DevExpress-Examples/blazor-DxGrid-save-restore-layout)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=blazor-grid-master-detail-partial-loading&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=blazor-grid-master-detail-partial-loading&~~~was_helpful=no)
 
